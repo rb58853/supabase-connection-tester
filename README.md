@@ -21,7 +21,7 @@ This project is a simple tool designed to test connections with Supabase hosted 
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/rb/supabase-connection-tester.git
+    git clone https://github.com/rb58853/simple-supabase-python-client.git
     cd supabase-connection-tester
     ```
 
@@ -55,6 +55,10 @@ This project is a simple tool designed to test connections with Supabase hosted 
     ## POOLER
     POOLER_PROXY_PORT_TRANSACTION=6543
     POOLER_TENANT_ID=your-tenant-id
+
+    # LOGING
+    EMAIL=example@gmail.com
+    PASSWORD=supabase_user_password
     ```
 
 ## Usage
