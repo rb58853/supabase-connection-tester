@@ -21,7 +21,7 @@ This project is a simple tool designed to test connections with Supabase hosted 
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/rb58853/simple-supabase-python-client.git
+    git clone https://github.com/rb58853/supabase-connection-tester.git
     cd supabase-connection-tester
     ```
 
