@@ -2,7 +2,8 @@ import httpx
 import os
 import asyncio
 
-supabase_access_token: str = os.getenv("SUPABASE_SERVICE_ROLE_KEY")
+supabase_access_key: str = os.getenv("SUPABASE_SERVICE_ROLE_KEY")
+supabase_access_token: str = os.getenv("USER_ACCESS_TOKEN")
 supabase_api_url: str = "https://suparaul.differential.es"
 
 
@@ -10,10 +11,11 @@ def create_httpx_client(supabase_access_token, supabase_api_url) -> httpx.AsyncC
     """Create and configure an httpx client for API requests."""
     headers = {
         "Authorization": f"Bearer {supabase_access_token}",
-        "apikey": supabase_access_token,
+        "apikey": supabase_access_key,
         "Content-Type": "application/json",
     }
 
+    
     return httpx.AsyncClient(
         base_url=supabase_api_url,
         headers=headers,
@@ -28,12 +30,23 @@ def test():
         ) as client:
             # Cambia 'users' por el nombre real de una de tus tablas
             response = await client.get("/rest/v1/users")
+
             print(
-                "✓ HTTPX connection established successfully"
+                "✓ HTTPX GET connection established successfully"
                 if response.status_code == 200
-                else "✗ HTTPX connection established error"
+                else "✗ HTTPX GET connection established error"
             )
-            # print("Status code:", response.status_code)
-            # print("Response JSON:", response.json())
+            request = client.build_request(
+                method="GET",
+                url="/features/call_auth_admin_method/access",
+                params={},
+                # json={},
+            )
+            response = await client.send(request)
+            print(
+                "✓ HTTPX SEND REQUEST connection established successfully"
+                if response.status_code == 200
+                else f"✗ HTTPX SEND REQUEST connection established error: {response.text}"
+            )
 
     asyncio.run(test_users_table())
