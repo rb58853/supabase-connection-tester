@@ -6,8 +6,8 @@ This project is a simple tool designed to test connections with Supabase hosted 
 
 - Test connectivity with Supabase instances.
 - Support for Docker and VPS-hosted environments.
-- Integration with Kong for API gateway testing.
 - Access Token Generator for secure authentication.
+<!-- - Integration with Kong for API gateway testing. -->
 
 ## Prerequisites
 
@@ -78,6 +78,8 @@ To generate an access token:
 ```bash
 python src.tools.generate_access_token.py
 ```
+It is mandatory to create a user in your auth user list of your Supabase instance.
+![alt text](Doc/image.png)
 
 ## Contact
 
