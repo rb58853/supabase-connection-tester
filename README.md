@@ -81,4 +81,4 @@ python src.tools.generate_access_token.py
 
 ## Contact
 
-For questions or support, please contact [your-email@example.com].
+For questions or support, please open a Issue in this repositorie.
