@@ -4,4 +4,4 @@ from src.test_connection.httpx_client import test as test_httpx_client
 
 # test_supabase_connect()
 # test_db_connect()
-test_httpx_client()
+# test_httpx_client()

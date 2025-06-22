@@ -76,7 +76,7 @@ python test_connection.py
 To generate an access token:
 
 ```bash
-python src.tools.generate_access_token.py
+python src.manual_token_generation.py
 ```
 It is mandatory to create a user in your auth user list of your Supabase instance.
 ![alt text](Doc/image.png)
