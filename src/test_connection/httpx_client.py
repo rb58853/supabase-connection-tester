@@ -10,12 +10,12 @@ supabase_api_url: str = "https://suparaul.differential.es"
 def create_httpx_client(supabase_access_token, supabase_api_url) -> httpx.AsyncClient:
     """Create and configure an httpx client for API requests."""
     headers = {
-        "Authorization": f"Bearer {supabase_access_token}",
+        "Authorization": f"Bearer {supabase_access_key}",
         "apikey": supabase_access_key,
         "Content-Type": "application/json",
+        "X-API-Key": f"{supabase_access_key}",
     }
 
-    
     return httpx.AsyncClient(
         base_url=supabase_api_url,
         headers=headers,
@@ -34,7 +34,7 @@ def test():
             print(
                 "✓ HTTPX GET connection established successfully"
                 if response.status_code == 200
-                else "✗ HTTPX GET connection established error"
+                else f"✗ HTTPX GET connection established error: {response.text}"
             )
             request = client.build_request(
                 method="GET",
@@ -42,6 +42,7 @@ def test():
                 params={},
                 # json={},
             )
+
             response = await client.send(request)
             print(
                 "✓ HTTPX SEND REQUEST connection established successfully"
@@ -50,3 +51,6 @@ def test():
             )
 
     asyncio.run(test_users_table())
+
+
+test()
