@@ -1,20 +1,20 @@
 # Supabase Connection Tester
 
-This project is a simple tool designed to test connections with Supabase hosted on Docker or a VPS. It also integrates with environments like Kong for API gateway management. Additionally, the project includes utilities such as an Access Token Generator.
+This project is a simple tool designed to test connections with Supabase hosted on Docker or a VPS. It also integrates with environments like Kong for API gateway management.
 
 ## Features
 
 - Test connectivity with Supabase instances.
 - Support for Docker and VPS-hosted environments.
-- Access Token Generator for secure authentication.
+<!-- - Access Token Generator for secure authentication. -->
 <!-- - Integration with Kong for API gateway testing. -->
 
 ## Prerequisites
 
-- Docker installed on your system.
 - Python 3.8 or higher.
 - Supabase instance (hosted locally or on a VPS).
-- Optional: Kong API Gateway setup.
+<!-- - Docker installed on your system. -->
+<!-- - Optional: Kong API Gateway setup. -->
 
 ## Installation
 
@@ -55,10 +55,6 @@ This project is a simple tool designed to test connections with Supabase hosted 
     ## POOLER
     POOLER_PROXY_PORT_TRANSACTION=6543
     POOLER_TENANT_ID=your-tenant-id
-
-    # LOGING
-    EMAIL=example@gmail.com
-    PASSWORD=supabase_user_password
     ```
 
 ## Usage
@@ -70,17 +66,3 @@ To test the connection with your Supabase instance:
 ```bash
 python test_connection.py
 ```
-
-### Generating an Access Token
-
-To generate an access token:
-
-```bash
-python src.manual_token_generation.py
-```
-It is mandatory to create a user in your auth user list of your Supabase instance.
-![alt text](Doc/image.png)
-
-## Contact
-
-For questions or support, please open a Issue in this repositorie.
